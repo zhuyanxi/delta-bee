@@ -1,0 +1,5 @@
+{
+    "rust-analyzer.linkedProjects": [
+        "./deltabee-ebpf/Cargo.toml"
+    ]
+}
