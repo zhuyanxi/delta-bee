@@ -2,6 +2,7 @@
 #![no_main]
 
 use aya_ebpf::{macros::kprobe, programs::ProbeContext};
+use aya_ebpf::{macros::socket_filter, programs::SkBuffContext};
 
 #[kprobe]
 pub fn testdeltabee(ctx: ProbeContext) -> u32 {
@@ -17,6 +18,19 @@ fn try_deltabee(ctx: ProbeContext) -> Result<u32, u32> {
     // aya_log_ebpf::debug!(&ctx, "function tcp_connect called");
     // aya_log_ebpf::trace!(&ctx, "function tcp_connect called");
     // aya_log_ebpf::error!(&ctx, "function tcp_connect called");
+    Ok(0)
+}
+
+#[socket_filter]
+pub fn gethttprequest(ctx: SkBuffContext) -> i64 {
+    match try_gethttprequest(ctx) {
+        Ok(ret) => ret,
+        Err(ret) => ret,
+    }
+}
+
+fn try_gethttprequest(ctx: SkBuffContext) -> Result<i64, i64> {
+    aya_log_ebpf::info!(&ctx, "get http request called");
     Ok(0)
 }
 

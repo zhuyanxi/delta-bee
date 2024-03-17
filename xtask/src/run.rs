@@ -45,6 +45,9 @@ pub fn run(opts: Options) -> Result<(), anyhow::Error> {
     args.push(bin_path.as_str());
     args.append(&mut run_args);
 
+    println!("Running full command `{}`", args.join(" "));
+    println!("Running first command `{}`", args.first().unwrap());
+
     let status = Command::new(args.first().expect("No first argument"))
         .args(args.iter().skip(1))
         .status()
