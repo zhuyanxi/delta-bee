@@ -1,7 +1,7 @@
 #![no_std]
 #![no_main]
 
-use aya_bpf::{macros::kprobe, programs::ProbeContext};
+use aya_ebpf::{macros::kprobe, programs::ProbeContext};
 
 #[kprobe]
 pub fn testdeltabee(ctx: ProbeContext) -> u32 {
