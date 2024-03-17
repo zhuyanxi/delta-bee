@@ -6,3 +6,22 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+aya = { git = "https://github.com/aya-rs/aya", rev = "1979da92a722bacd9c984865a4c7108e22fb618f", features = [
+    "async_tokio",
+] }
+aya-log = { git = "https://github.com/aya-rs/aya", rev = "1979da92a722bacd9c984865a4c7108e22fb618f" }
+anyhow = "1.0.81"
+env_logger = "0.11.3"
+libc = "0.2.153"
+log = "0.4.21"
+tokio = { version = "1.36.0", features = [
+    "macros",
+    "rt",
+    "rt-multi-thread",
+    "net",
+    "signal",
+] }
+
+[[bin]]
+name = "deltabee"
+path = "src/main.rs"

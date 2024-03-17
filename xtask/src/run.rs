@@ -37,7 +37,7 @@ pub fn run(opts: Options) -> Result<(), anyhow::Error> {
     build(&opts).context("Error while building userspace application")?;
 
     let profile = if opts.release { "release" } else { "debug" };
-    let bin_path = format!("target/{profile}/delta-bee");
+    let bin_path = format!("target/{profile}/deltabee");
 
     let mut run_args: Vec<_> = opts.run_args.iter().map(String::as_str).collect();
 

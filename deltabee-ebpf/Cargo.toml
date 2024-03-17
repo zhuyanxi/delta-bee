@@ -6,11 +6,13 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-aya = "0.12.0"
-aya-log = "0.2.0"
+aya-bpf = { git = "https://github.com/aya-rs/aya", rev = "1979da92a722bacd9c984865a4c7108e22fb618f" }
+aya-log-ebpf = { git = "https://github.com/aya-rs/aya", rev = "1979da92a722bacd9c984865a4c7108e22fb618f" }
+# aya = "0.12.0"
+# aya-log = "0.2.0"
 
 [[bin]]
-name = "deltabee-ebpf"
+name = "deltabee"
 path = "src/main.rs"
 
 [profile.dev]
