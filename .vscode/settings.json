@@ -3,5 +3,6 @@
         "Cargo.toml",
         "deltabee-ebpf/Cargo.toml",
         "./deltabee-ebpf/Cargo.toml"
-    ]
+    ],
+    "rust-analyzer.check.allTargets": false
 }
